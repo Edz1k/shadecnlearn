@@ -1,5 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import NavbarComponent from '@/components/NavbarComponent.vue';
+</script>
 
 <template>
-  <div></div>
+  <NavbarComponent/>
 </template>
