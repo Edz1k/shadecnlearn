@@ -43,4 +43,5 @@ const selected = ref<string>(menuItems[0].value)
   --tw-ring-opacity: 0;
   --tw-ring-color: none;
 }
+
 </style>

@@ -15,17 +15,17 @@ const router = createRouter({
     },
     {
       path: '/products',
-      name: 'ProductsView',
+      name: 'products',
       component: ProductsView,
     },
     {
       path: '/customers',
-      name: 'CustomerView',
+      name: 'customers',
       component: CustomerView,
     },
     {
       path: '/settings',
-      name: 'SettingsView',
+      name: 'settings',
       component: SettingsView,
     },
   ],

@@ -9,20 +9,20 @@ import { RouterLink } from 'vue-router'
 const items = ref<MenuItem[]>([
   {
     label: 'Overview',
-    to: '/'
+    to: '/',
   },
   {
     label: 'Customers',
-    to: '/customers'
+    to: '/customers',
   },
   {
     label: 'Products',
-    to: '/products'
+    to: '/products',
   },
   {
     label: 'Settings',
-    to: '/settings'
-  }
+    to: '/settings',
+  },
 ])
 
 interface MenuItem {
@@ -31,29 +31,30 @@ interface MenuItem {
 }
 </script>
 <template>
-  <Menubar class="Menubar">
-    <MenubarMenu>
-      <div class="select">
-        <MenubarTrigger class="w-full">
-          <SelectComponent class="w-full"/>
-        </MenubarTrigger>
-      </div>
-      <div class="flex options">
-        <MenubarTrigger
-          v-for="item in items"
-          :key="item.label"
-        >
-          <RouterLink :to="item.to" active-class="font-bold">{{ item.label }}</RouterLink>
-        </MenubarTrigger>
-      </div>
-      <div class="right-side flex">
-        <Input type="email" placeholder="Email" />
-        <Avatar>
-          <AvatarImage src="https://www.shadcn-vue.com/avatars/01.png" />
-        </Avatar>
-      </div>
-    </MenubarMenu>
-  </Menubar>
+  <div class="container">
+    <Menubar class="Menubar">
+      <MenubarMenu>
+        <div class="select">
+          <MenubarTrigger class="w-full px-0">
+            <SelectComponent class="w-full" />
+          </MenubarTrigger>
+        </div>
+        <div class="flex options">
+          <MenubarTrigger v-for="item in items" :key="item.label">
+            <RouterLink :to="item.to" active-class="font-bold">{{
+              item.label
+            }}</RouterLink>
+          </MenubarTrigger>
+        </div>
+        <div class="right-side flex">
+          <Input type="email" placeholder="Email" />
+          <Avatar>
+            <AvatarImage src="https://www.shadcn-vue.com/avatars/01.png" />
+          </Avatar>
+        </div>
+      </MenubarMenu>
+    </Menubar>
+  </div>
 </template>
 <style scoped>
 .data-\[state\=open\]\:bg-slate-100[data-state='open'] {
@@ -62,13 +63,17 @@ interface MenuItem {
 .Menubar {
   display: flex;
   justify-content: space-between;
-  padding: 30px;
+  padding: 30px 10px 30px 10px;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
 }
-
+.rounded-md {
+  border-radius: 0;
+}
 .select {
   width: 20%;
 }
-.right-side > input{
+.right-side > input {
   margin-right: 10px;
 }
 .right-side {
@@ -76,6 +81,5 @@ interface MenuItem {
 }
 .options {
   flex-basis: 42%;
-
 }
 </style>

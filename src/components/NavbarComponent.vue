@@ -6,7 +6,7 @@ import MenubarComponent from '@/components/NavbarComponents/MenubarComponent.vue
 </template>
 <style scoped>
 .menubar {
-  width: 55%;
+  width: 100%;
   margin: 0 auto;
   margin-top: 50px;
 }
