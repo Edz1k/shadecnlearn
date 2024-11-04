@@ -3,6 +3,32 @@ import SelectComponent from './SelectComponent.vue'
 import { Avatar, AvatarImage } from '../ui/avatar'
 import { Menubar, MenubarMenu, MenubarTrigger } from '@/components/ui/menubar'
 import { Input } from '@/components/ui/input'
+import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
+
+const items = ref<MenuItem[]>([
+  {
+    label: 'Overview',
+    to: '/'
+  },
+  {
+    label: 'Customers',
+    to: '/customers'
+  },
+  {
+    label: 'Products',
+    to: '/products'
+  },
+  {
+    label: 'Settings',
+    to: '/settings'
+  }
+])
+
+interface MenuItem {
+  label: string
+  to: string
+}
 </script>
 <template>
   <Menubar class="Menubar">
@@ -13,10 +39,12 @@ import { Input } from '@/components/ui/input'
         </MenubarTrigger>
       </div>
       <div class="flex options">
-        <MenubarTrigger> Overview </MenubarTrigger>
-        <MenubarTrigger> Customers </MenubarTrigger>
-        <MenubarTrigger> Products </MenubarTrigger>
-        <MenubarTrigger> Settings </MenubarTrigger>
+        <MenubarTrigger
+          v-for="item in items"
+          :key="item.label"
+        >
+          <RouterLink :to="item.to" active-class="font-bold">{{ item.label }}</RouterLink>
+        </MenubarTrigger>
       </div>
       <div class="right-side flex">
         <Input type="email" placeholder="Email" />
@@ -36,6 +64,7 @@ import { Input } from '@/components/ui/input'
   justify-content: space-between;
   padding: 30px;
 }
+
 .select {
   width: 20%;
 }
