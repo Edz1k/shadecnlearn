@@ -21,7 +21,7 @@ const value = ref<DateValue>()
 </script>
 
 <template>
-  <div class="dark:bg-slate-950">
+  <div>
     <div class="container">
       <div
         class="p-5 flex flex-wrap border-b border-l border-r border-slate-800 dark:bg-slate-950 dark:text-white"

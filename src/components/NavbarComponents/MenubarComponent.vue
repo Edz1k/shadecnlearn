@@ -31,7 +31,7 @@ interface MenuItem {
 }
 </script>
 <template>
-  <div class="dark:bg-slate-950">
+  <div>
     <div class="container">
       <Menubar class="Menubar dark:text-white">
         <MenubarMenu>
