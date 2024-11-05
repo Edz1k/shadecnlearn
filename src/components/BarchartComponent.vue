@@ -23,13 +23,13 @@ const data = [
       <h3 class="text-2xl">Overview</h3>
     </div>
     <BarChart
-      class="dark:fill-white"
       :data="data"
       index="name"
       :categories="['total']"
       :rounded-corners="4"
       :show-legend="true"
       :show-tooltip="true"
+      :colors="['blue']"
     />
   </div>
 </template>
