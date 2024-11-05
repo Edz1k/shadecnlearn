@@ -31,29 +31,35 @@ interface MenuItem {
 }
 </script>
 <template>
-  <div class="container">
-    <Menubar class="Menubar dark:text-white">
-      <MenubarMenu>
-        <div class="select">
-          <MenubarTrigger class="w-full px-0">
-            <SelectComponent class="w-full" />
-          </MenubarTrigger>
-        </div>
-        <div class="flex options">
-          <MenubarTrigger v-for="item in items" :key="item.label">
-            <RouterLink :to="item.to" active-class="font-bold">{{
-              item.label
-            }}</RouterLink>
-          </MenubarTrigger>
-        </div>
-        <div class="right-side flex">
-          <Input type="email" placeholder="Email" class="focus-visible:ring-1 rounded"/>
-          <Avatar>
-            <AvatarImage src="https://www.shadcn-vue.com/avatars/01.png" />
-          </Avatar>
-        </div>
-      </MenubarMenu>
-    </Menubar>
+  <div class="dark:bg-slate-950">
+    <div class="container">
+      <Menubar class="Menubar dark:text-white">
+        <MenubarMenu>
+          <div class="select">
+            <MenubarTrigger class="w-full px-0">
+              <SelectComponent class="w-full" />
+            </MenubarTrigger>
+          </div>
+          <div class="flex options">
+            <MenubarTrigger v-for="item in items" :key="item.label">
+              <RouterLink :to="item.to" active-class="font-bold">{{
+                item.label
+              }}</RouterLink>
+            </MenubarTrigger>
+          </div>
+          <div class="right-side flex">
+            <Input
+              type="email"
+              placeholder="Email"
+              class="focus-visible:ring-1 rounded"
+            />
+            <Avatar>
+              <AvatarImage src="https://www.shadcn-vue.com/avatars/01.png" />
+            </Avatar>
+          </div>
+        </MenubarMenu>
+      </Menubar>
+    </div>
   </div>
 </template>
 <style scoped>
