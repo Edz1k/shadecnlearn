@@ -32,7 +32,7 @@ interface MenuItem {
 </script>
 <template>
   <div class="container">
-    <Menubar class="Menubar">
+    <Menubar class="Menubar dark:text-white">
       <MenubarMenu>
         <div class="select">
           <MenubarTrigger class="w-full px-0">
@@ -47,7 +47,11 @@ interface MenuItem {
           </MenubarTrigger>
         </div>
         <div class="right-side flex">
-          <Input type="email" placeholder="Email" />
+          <Input
+            type="email"
+            placeholder="Email"
+            class="focus-visible:ring-1 rounded"
+          />
           <Avatar>
             <AvatarImage src="https://www.shadcn-vue.com/avatars/01.png" />
           </Avatar>
